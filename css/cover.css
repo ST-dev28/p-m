@@ -1,0 +1,153 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(125deg, #302015 0%, #1C1008 100%);
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: burlywood;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#logo {
+    float: left;
+    width: 200px;
+    margin: 10px 400px 10px 50px;
+}
+.topnav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  padding: 12px 16px;
+  margin: 24px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: blanchedalmond;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #333;
+  color: blanchedalmond;
+  font-weight: bold;
+}
+ /* Container */
+.example {
+    position: relative;
+    width: 80%;
+    padding-top: 40%;
+    margin: 8rem auto 0 auto;
+}    
+.example .block {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    perspective: 1000px;
+}        
+.example .block:nth-of-type(1) {
+    height: 80%;
+    top: 10%;
+    left: 17%;
+    width: 15%;
+}
+        
+.example .block:nth-of-type(2) {
+    top: 0;
+    left: 35%;
+}
+        
+.example .block:nth-of-type(3) {
+    height: 80%;
+    top: 10%;
+    left: 64%;
+    width: 15%;
+}
+
+.example > .block:nth-of-type(1) > .side.-main {
+    background-position: 4% 50%;
+    background-size: auto 130%;
+}
+.example > .block:nth-of-type(1) > .side.-left {
+    background-position: 0 50%;
+    background-size: auto 130%;
+}
+.example > .block > .side.-main {
+    height: 100%;
+    width: 100%;
+    transform: rotateY(30deg);
+    transform-origin: 0 50%;
+}
+.example > .block > .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/ver1.jpg);
+    background-size: auto 100%;
+    box-shadow: -1vw 0.5vw 1vw rgb(0 0 0 / 30%);
+}
+.example > .block > .side.-left {
+    height: 100%;
+    width: 20%;
+    transform-origin: 0 50%;
+    transform: rotateY(-60deg) translateX(-100%);
+    filter: brightness(40%);
+}
+.example > .block:nth-of-type(2) > .side.-main {
+    background-position: 50% 0;
+}
+.example > .block:nth-of-type(2) > .side.-left {
+    background-position: 28.5% 0;
+}
+   
+.example > .block:nth-of-type(3) > .side.-main {
+    background-position: 96% 50%;
+    background-size: auto 130%;
+}
+.example > .block:nth-of-type(3) > .side.-left {
+    background-position: 78% 50%;
+    background-size: auto 130%;
+}
+.example .block:hover {
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(180deg);
+    transition-duration: 3s;
+    -webkit-transition-duration:2s;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+.example {
+    width: 140%;
+    padding-top: 75%;
+    margin: 20rem 0 0 0;
+}  
+.example .block:nth-of-type(1) {
+    left: 6%;
+}       
+.example .block:nth-of-type(2) {
+    left: 24%;
+}        
+.example .block:nth-of-type(3) {
+    left: 53%;
+}  
+   
+}
+
+/*Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.example {
+    margin: 15rem 0 0 0;
+}
+.topnav a {
+    margin: 0 0 5px 5px;
+}
+}
+

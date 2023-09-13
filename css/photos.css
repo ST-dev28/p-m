@@ -5,13 +5,15 @@
 body {
   margin: 0;
   font-family: Arial;
-  background-color: burlywood;
+  /*background-color: burlywood;*/
+  background: linear-gradient(125deg, #302015 0%, #1C1008 100%);
 }
-
+/* header */
 .topnav {
   overflow: hidden;
   background-color: burlywood;
-  position: fixed;
+  position:absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -19,11 +21,16 @@ body {
 #logo {
     float: left;
     width: 200px;
-    margin: 10px 400px 10px 50px;
+    margin: 10px 0 10px 30px;
 }
-.topnav a {
+
+.navigation {
+float: right;
+}
+
+.navigation a {
   float: left;
-  color: #333;
+  color: #1C1008;
   text-align: center;
   padding: 12px 16px;
   margin: 24px;
@@ -31,13 +38,13 @@ body {
   font-size: 18px;
 }
 
-.topnav a:hover {
-  background-color: rgb(5, 4, 2);
-  color: #333;
+.navigation a:hover {
+  background-color: blanchedalmond;
+  color: #1C1008;
 }
 
-.topnav a.active {
-  background-color: #333;
+.navigation a.active {
+  background-color: #1C1008;
   color: blanchedalmond;
   font-weight: bold;
 }
@@ -48,7 +55,7 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 0 4px;
-  margin-top: 92px;
+  /*margin-top: 92px;*/
 }
 
 /* Create four equal columns that sits next to each other */
@@ -85,9 +92,21 @@ body {
     flex: 100%;
     max-width: 100%;
   }
-  .topnav a {
+  .navigation a {
      margin: 5px;
      padding: 6px 8px;
    }
 }
+
+@media screen and (max-width: 450px) {
+ #logo {
+    margin: 10px 30px 10px 30px;
+}
+ .navigation a {
+  padding: 6px 8px;
+  margin: 5px;
+   }
+}
+
+
 

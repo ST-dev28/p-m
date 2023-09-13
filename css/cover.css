@@ -1,27 +1,41 @@
+* {
+   box-sizing: border-box; 
+}
+
 html, body {
-    min-height: 100%;
+   min-height: 100vh;
 }
 
 body {
-    background: linear-gradient(125deg, #302015 0%, #1C1008 100%);
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(125deg, #302015 0%, #1C1008 100%);
 }
 
+/* header */
 .topnav {
   overflow: hidden;
   background-color: burlywood;
-  position: fixed;
+  position:absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 #logo {
     float: left;
     width: 200px;
-    margin: 10px 400px 10px 50px;
+    margin: 10px 0 10px 30px;
 }
-.topnav a {
+
+.navigation {
+float: right;
+}
+
+.navigation a {
   float: left;
-  color: #333;
+  color: #1C1008;
   text-align: center;
   padding: 12px 16px;
   margin: 24px;
@@ -29,22 +43,24 @@ body {
   font-size: 18px;
 }
 
-.topnav a:hover {
+.navigation a:hover {
   background-color: blanchedalmond;
-  color: black;
+  color: #1C1008;
 }
 
-.topnav a.active {
-  background-color: #333;
+.navigation a.active {
+  background-color: #1C1008;
   color: blanchedalmond;
   font-weight: bold;
 }
- /* Container */
+
+/* Container */
 .example {
     position: relative;
     width: 80%;
     padding-top: 40%;
-    margin: 8rem auto 0 auto;
+    margin: 2rem auto 0 auto;
+    z-index: 1;
 }    
 .example .block {
     position: absolute;
@@ -137,17 +153,41 @@ body {
 }        
 .example .block:nth-of-type(3) {
     left: 53%;
-}  
-   
+}   
+ #logo {
+    margin: 10px 30px 10px 30px;
+}
+  .navigation a {
+    margin: 0;
+    margin-top: 24px;
+   } 
 }
 
 /*Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 .example {
-    margin: 15rem 0 0 0;
+    margin: 1rem 0 0 0;
 }
-.topnav a {
-    margin: 0 0 5px 5px;
+ #logo {
+    margin: 10px 30px 10px 30px;
 }
+  .navigation a {
+    margin: 0;
+    margin-top: 24px;
+    padding: 12px 8px ;
+   }
+}
+
+@media screen and (max-width: 450px) {
+.example {
+    margin: 5rem 0 0 0;
+}
+ #logo {
+    margin: 10px 30px 10px 30px;
+}
+ .navigation a {
+  padding: 6px 8px;
+  margin: 5px;
+   }
 }
 

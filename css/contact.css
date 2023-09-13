@@ -1,33 +1,43 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   margin: 0;
   font-family: Arial;
   background-color: burlywood;
-  background-color: #333;
+  background: linear-gradient(125deg, #302015 0%, #1C1008 100%);
   /*background-image: url(../img/hor1.jpg);
   background-size: cover;
   background-repeat: no-repeat;*/
 }
 
+/* header */
 .topnav {
   overflow: hidden;
   background-color: burlywood;
-  position: fixed;
+  position:absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 3;
 }
 #logo {
     float: left;
     width: 200px;
-    margin: 10px 400px 10px 50px;
+    margin: 10px 0 10px 30px;
 }
-.topnav a {
+
+.navigation {
+float: right;
+}
+
+.navigation a {
   float: left;
-  color: #333;
+  color: #1C1008;
   text-align: center;
   padding: 12px 16px;
   margin: 24px;
@@ -35,29 +45,34 @@ body {
   font-size: 18px;
 }
 
-.topnav a:hover {
-  background-color: rgb(5, 4, 2);
-  color: #333;
+.navigation a:hover {
+  background-color: blanchedalmond;
+  color: #1C1008;
 }
 
-.topnav a.active {
-  background-color: #333;
+.navigation a.active {
+  background-color: #1C1008;
   color: blanchedalmond;
   font-weight: bold;
 }
+
 /*.bg {
     width: 100%;
 }*/
+.container{
+  z-index: 1;
+}
 h1 {
     font-size: 40px;
-    margin-top: 300px;
-    text-align: center;
+    /*margin-top: 110px;*/
+    text-align: left;
+    padding: 50px;
     color: antiquewhite;
     font-style: italic;
-    /*-webkit-animation: h1 8s infinite; 
-    animation: h1 8s infinite;*/
-    animation: zoomup 2s linear infinite;
-    animation-delay: calc(200ms * var(--i));
+    -webkit-animation: h1 8s infinite; 
+    animation: h1 4s infinite;
+    /*animation: zoomup 2s linear infinite;
+    animation-delay: calc(200ms * var(--i));*/
 }
 
 @-webkit-keyframes h1 {
@@ -75,7 +90,7 @@ h1 {
     75%  {text-shadow: 0 0 15px #FF0000;}
     100% {text-shadow: 0 0 3px #FF0000; color: #fff;}
 }
-
+/*
 @keyframes zoomup {
   0%,
   100% {
@@ -92,12 +107,48 @@ h1 {
     color: #fff;
     text-shadow: none;
   }
+}*/
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #333;
+}
+.image {
+  perspective: 10000px;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  top:55%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+.image img {
+  transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+  box-shadow: -80px 60px 15px 5px rgba(0,0,0,0.4);
+  transition: all .4s;
+  transform-style: preserve-3d;
+}
+.image:hover img {
+  transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
 }
 
 /*Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-.topnav a {
-    margin: 5px;
-    padding: 6px 8px;
+@media screen and (max-width: 700px) {
+#logo {
+    margin: 10px 30px 10px 30px;
 }
+  .navigation a {
+    margin: 0;
+    margin-top: 24px;
+   }
+}
+
+@media screen and (max-width: 450px) {
+  .navigation a {
+     margin: 5px;
+     padding: 6px 8px;
+   }
 }
